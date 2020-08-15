@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DJANGO BOOKMARK INDEX PAGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+        span {
+            font-size: 64px;
+            color: brown;
+        }
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            background-color: aqua;
+            color: fuchsia;
+            text-decoration: none;
+            list-style: none;
+        }
+        li {
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 15px;
+
+        }
+        a:hover {
+            color: fuchsia;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="content">
+    <h1> <span>에</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤 </h1>
+    <ul>
+
+
+        {% for bookmark in object_list  %}
+
+        <li> <a href= "{%  url 'detail' bookmark.id  %}" > {{ bookmark  }}  </a> </li>
+
+        {% endfor %}
+
+    </ul>
+</div>
+</body>
+</html>
+

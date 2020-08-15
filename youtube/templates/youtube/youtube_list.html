@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DJANGO YOUTUBE INDEX PAGE</title>
+</head>
+<body>
+<div id="content">
+    <h1> <span>에</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤 </h1>
+    <ul>
+
+
+        {% for youtube in object_list  %}
+
+        <li> <a href= "{%  url 'youtube_detail' youtube.id  %}" > {{ youtube  }}  </a> </li>
+
+        {% endfor %}
+
+    </ul>
+</div>
+</body>
+</html>
+

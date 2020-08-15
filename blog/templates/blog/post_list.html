@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST LIST</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 40px;
+        }
+        #small {
+            font-size: 20px;
+        }
+        #content {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .des {
+            color: firebrick;
+        }
+        .post {
+            display: inline-block;
+            border: 1px solid black;
+            text-align: center;
+            width: 410px;
+            height: 650px;
+        }
+
+
+    </style>
+    {% load staticfiles %}
+</head>
+<body>
+<h1>Made by telescope0901 <span id="small"> Blog </span> </h1>
+<div id="content">
+    {% for post in object_list %}
+    <div class="post">
+        <p class="des"> {{post.title}} </p>
+        <img src=" {{post.image.url}} " alt="  {{post.description}}  ", width="400", height="400">
+        <p class="des"> {{post.description}} </p>
+        <p class="des"> CREATE DATE : {{ post.create_date }} </p>
+        <p class="des"> MODIFY DATE : {{ post.modify_date }} </p>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>

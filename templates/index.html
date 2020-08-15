@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'MuseoModerno', cursive;
+        }
+        .main_text{
+            position: absolute;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            color: white;
+            width: 100%;
+        }
+        #title {
+            left:50%;
+            top:20%;
+            font-size: 60px;
+        }
+        .main_text:hover{
+            transition: 2s;
+            color: aqua;
+        }
+        #made {
+            left: 50%;
+            top:45%;
+            font-size: 25px;
+        }
+        #made:hover {
+            transition: 2s;
+            color: red;
+        }
+        #menu {
+            left:50%;
+            top:35%;
+            font-size: 25px;
+        }
+        ul {
+            position: absolute;
+            top:35%;
+            left:50%;
+        }
+        li {
+            display: inline-block;
+            font-size: 50px;
+            margin-left: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: brown;
+        }
+        a:hover {
+            transition: 2s;
+            color: aqua;
+        }
+        h1:hover {
+            background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); -webkit-background-clip: text; color:transparent;
+        }
+    </style>
+</head>
+<body>
+    <iframe width="100%" height="1060" src="https://www.youtube.com/embed/KGlv9Lw4QSM?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h1 class="main_text" id="title">DJANGO FRAMEWORK</h1>
+    <h1 class="main_text" id="made">Made by
+        <span id="username">me</span> &amp;
+        <span id="dlab">DLAB</span>
+    </h1>
+    <ul class="main_text" id="menu">
+        <li><a href="{% url 'admin:index' %}", target="_blank">ADMIN</a></li>
+        <li><a href="{% url 'bookmark_index'%}", target="_blank">BOOKMARK</a></li>
+        <li><a href="{% url 'blog_index'%}", target="_blank">BLOG</a></li>
+    </ul>
+</body>
+</html>
