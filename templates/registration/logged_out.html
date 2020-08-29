@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOG OUT DONE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            width: 100%;
+            text-align: center;
+            background-color: burlywood;
+        }
+        #border {
+            border: 2px solid aqua;
+            width: 1000px;
+            height: 250px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+   <div id=border>
+    <h1>LOG OUT Complete</h1>
+    <p> Redirecting in 3 seconds... </p>
+
+    <meta http-equiv="refresh" content="3; url={% url 'index' %}" />
+    <br>
+    <div class="spinner-border"></div>
+
+    <script>
+        let cnt = 3;
+        const p = document.querySelector('p');
+
+        function upd_text(){
+            if (cnt > 1){
+                cnt = cnt - 1;
+                p.innerText = ` Redirecting in ${cnt} seconds... `;
+            }
+        }
+
+        setInterval(upd_text,1000);
+    </script>
+    </div>
+
+</body>
+</html>

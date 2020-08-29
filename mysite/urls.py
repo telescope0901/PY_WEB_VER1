@@ -13,13 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from mysite.views import IndexView
+from mysite.views import IndexView, UserCreateView, UserCreateDoneTV
 from bookmark.views import BookmarkLV
 from youtube.views import YoutubeLV, YoutubeDV
 from bookmark.views import BookmarkDV
 from blog.views import PostLV, PostDV
+
 
 from django.conf.urls.static import static
 from django.conf import settings
@@ -28,11 +29,18 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index'),
     #r'^$'
+
+    url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
+    url(r'^accounts/register_done/$', UserCreateDoneTV.as_view(), name='register_done'),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+
+
     url(r'^bookmark/$',BookmarkLV.as_view(), name='bookmark_index'),
     url(r'youtube/$', YoutubeLV.as_view(), name='youtube_index'),
     url(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
     url(r'^youtube/(?P<pk>\d+)/$', YoutubeDV.as_view(), name='youtube_detail'),
     url(r'^blog/$', PostLV.as_view(), name='blog_index'),
     url(r'^blog/(?P<pk>\d+)/$', PostDV.as_view(), name='blog_detail'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 """python manage.py runserver"""

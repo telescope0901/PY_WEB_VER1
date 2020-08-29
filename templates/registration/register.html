@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGN UP</title>
+    <style>
+    form {
+                    border: 2px solid black;
+            width: 500px;
+            height: 450px;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(255,250,240 ,0.3 );
+        text-align: center;
+        padding-bottom: 50px;
+        padding-top: 50px;
+
+    }
+    form:hover {
+    transition: 2s;
+    background-color: rgba(255,250,240 ,1 );
+
+    }
+    div{
+        margin: 40px 15px;
+    }
+    body {
+        background-color: peru;
+    }
+    img {
+        width: 100px;
+        height: 100px;
+
+    }
+    </style>
+</head>
+<body>
+
+    <form method="post" action="."> {% csrf_token %}
+        <img src="https://drive.google.com/uc?id=1tI_eomPqtpH-_S7Xvk9spvd6hBj_3si7" alt="user">
+        <div>
+            {{ form.username.lable_tag }} {{ form.username }}
+        </div>
+        <div>
+            {{ form.password1.lable_tag }} {{ form.password1 }}
+        </div>
+        <div>
+            {{ form.password2.lable_tag }} {{ form.password2 }}
+        </div>
+
+        <button type="submit"> SIGN UP </button>
+    </form>
+</body>
+</html>
