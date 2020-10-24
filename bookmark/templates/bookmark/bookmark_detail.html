@@ -34,6 +34,19 @@
             color: fuchsia;
 
         }
+        button {
+            background-color:rgba(0,191,255 ,0.5 );
+            color:black;
+            width: 100px;
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 15px;
+        }
+        button:hover {
+            background-color: rgba(0,191,255 ,1 );
+            transition: 2s;
+        }
 
     </style>
 </head>
@@ -41,6 +54,16 @@
 
 <div id="content">
     <h1> {{ object.title }} </h1>
+
+    <a href="{% url 'bookmark_update' bookmark.id %}">
+        <button> UPDATE </button>
+
+    </a>
+    <a href="{% url 'bookmark_delete' bookmark.id %}">
+        <button> DELETE </button>
+
+    </a>
+
     <ul>
         <li> URL : {{object.url}} </li>
         <li> CREATE DATE : {{ object.create_date }} </li>

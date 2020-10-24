@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-import os
+import os;
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=g!v^_7l2y=j(oe+3s#0-r3kt+_zrnf$1hcaof_554e4z-vos1'
+SECRET_KEY = '=g!v^_7l2y=j(oe+3s#0-r3kt+_zrnf$1hcaof_554e4z-vos1';
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True;
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [];
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'youtube.apps.YoutubeConfig',
     'blog.apps.BlogConfig',
-]
+];
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,9 +50,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+];
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'mysite.urls';
 
 TEMPLATES = [
     {
@@ -68,9 +68,9 @@ TEMPLATES = [
             ],
         },
     },
-]
+];
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'mysite.wsgi.application';
 
 
 # Database
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+};
 
 
 # Password validation
@@ -100,30 +100,31 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+];
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'ko-kr';
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = 'Asia/Seoul';
 
-USE_I18N = True
+USE_I18N = True;
 
-USE_L10N = True
+USE_L10N = True;
 
-USE_TZ = True
+USE_TZ = True;
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/';
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')];
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/';
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media');
 
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/';

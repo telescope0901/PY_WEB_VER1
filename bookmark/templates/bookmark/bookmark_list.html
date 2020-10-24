@@ -34,6 +34,20 @@
             color: fuchsia;
 
         }
+        button {
+            text-align: center;
+            width: 100px;
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 15px;
+            background-color: rgba(123, 104, 238, 0.5);
+        }
+        button:hover {
+            transition: 1s;
+            background-color: rgba(123, 104, 238, 1);
+            color: white;
+        }
 
     </style>
 </head>
@@ -42,6 +56,9 @@
     <h1> <span>에</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤 </h1>
     <ul>
 
+        <a href=" {% url 'bookmark_create' %} ">
+        <button>CREATE</button>
+        </a>
 
         {% for bookmark in object_list  %}
 
@@ -53,4 +70,3 @@
 </div>
 </body>
 </html>
-

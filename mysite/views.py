@@ -19,3 +19,5 @@ class UserCreateView(CreateView):
 class UserCreateDoneTV(TemplateView):
     template_name = 'registration/register_done.html'
 
+class DjangoView(TemplateView):
+    template_name = "django.html"

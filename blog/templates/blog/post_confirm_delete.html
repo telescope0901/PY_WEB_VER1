@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Delete</title>
+    <style>
+        body {
+            background-color: chartreuse;
+            color: red;
+            font-size: 50px;
+        }
+        div {
+            text-align: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 200px;
+        }
+        button {
+            border: none;
+            width: 200px;
+            height: 140px;
+            background-color: azure;
+            border-radius: 15px;
+            font-size: 30px;
+        }
+        button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+   <div>
+    Are you sure to delete?
+<form action="" method="post"> {% csrf_token %}
+   <br>
+    <button type="submit"> DELETE </button>
+</form>
+    </div>
+</body>
+</html>

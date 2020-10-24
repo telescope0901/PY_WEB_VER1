@@ -1,17 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% load staticfiles %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <style>
-        * {
+                * {
             font-family: 'MuseoModerno', cursive;
         }
-        .main_text{
+        .container-fluid {
             position: absolute;
+            top: 15%;
+        }
+        .main_text{
             text-align: center;
-            transform: translate(-50%, -50%);
             color: white;
             width: 100%;
         }
@@ -25,23 +32,14 @@
             color: aqua;
         }
         #made {
-            left: 50%;
-            top:45%;
             font-size: 25px;
         }
         #made:hover {
             transition: 2s;
             color: red;
         }
-        #menu {
-            left:50%;
-            top:35%;
+        #menu
             font-size: 25px;
-        }
-        ul {
-            position: absolute;
-            top:35%;
-            left:50%;
         }
         li {
             display: inline-block;
@@ -51,35 +49,22 @@
         a {
             text-decoration: none;
             color: brown;
+            font-size: 25px;
         }
         a:hover {
             transition: 2s;
             color: aqua;
+            text-decoration:none;
         }
         h1:hover {
             background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); -webkit-background-clip: text; color:transparent;
         }
-
-        #auth2 {
-            left: 50%;
-            top: 10%;
-       }
        .auth_menu{
         font-size: 25px;
         color: fuchsia;
        }
         #username {
             color: greenyellow;
-        }
-
-        #auth1 {
-            left: 50%;
-            top: 10%;
-        }
-
-        #auth2 {
-            left: 50%;
-            top: 10%
         }
 
         .auth_menu {
@@ -95,34 +80,81 @@
             color: greenyellow;
             font-size: 35px;
         }
-    </style>
-</head>
-<body>
-    <iframe width="100%" height="1060" src="https://www.youtube.com/embed/KGlv9Lw4QSM?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h1 class="main_text" id="title">DJANGO FRAMEWORK</h1>
-    <h1 class="main_text" id="made">Made by
-        <span id="username">me</span> &amp;
-        <span id="dlab">DLAB</span>
-    </h1>
-    <ul class="main_text" id="menu">
-        <li><a href="{% url 'admin:index' %}", target="_blank">ADMIN</a></li>
-        <li><a href="{% url 'bookmark_index'%}", target="_blank">BOOKMARK</a></li>
-        <li><a href="{% url 'blog_index'%}", target="_blank">BLOG</a></li>
-    </ul>
+      </style>
 
-    {% if user.is_active  %}
-    <ul class="main_text" id="auth1">
-        <p class="greet"> HELLO, <strong class="userID">{{ user.get_username }}</strong></p>
-        <li><a href="{% url 'logout' %}" class="auth_menu"> LOG OUT </a></li>
-        <li><a href="{%  url 'password_change'  %}" class="auth_menu"> PW CHANGE </a></li>
-    </ul>
-    {% else %}
-    <ul class="main_text" id="auth2">
-        <p class="greet"> HELLO, <strong class="userID">Anonymous</strong></p>
-        <li><a href="{% url 'login' %}" class="auth_menu"> SIGN IN </a></li>
-        <li><a href="{% url 'register' %}" class="auth_menu"> SIGN UP </a></li>
-    </ul>
-    {% endif %}
+    <title>INDEX</title>
 
-</body>
+
+
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <video width="100%" muted autoplay loop>
+        <source src="{% static 'video/background.mp4' %}">
+    </video>
+    <div class="container-fluid">
+
+           <div class="main_text">
+               {% if user.is_active  %}
+                <div id="auth1">
+                <div class="row md main_text">
+                 <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                       <p class="greet"> HELLO, <strong class="userID">{{ user.get_username }}</strong></p>
+                   </div>
+                   <div class="col-md-3"></div></div>
+                   <div class="row md main_text">
+                   <div class="col-md-3"></div>
+                   <div class="col-md-3"><a href="{% url 'logout' %}">LOG OUT</a></div>
+                   <div class="col-md-3"><a href="{%  url 'password_change'  %}">PW CHANGE</a></div>
+                   <div class="col-md-3"></div></div>
+                   </div>
+                   {% else %}
+                <div id="auth2">
+                <div class="row md main_text">
+                 <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                       <p class="greet"> HELLO, <strong class="userID">Anonymous</strong></p>
+                   </div>
+                   <div class="col-md-3"></div></div>
+                   <br>
+                   <div class="row md main_text">
+                   <div class="col-md-3"></div>
+                   <div class="col-md-3"><a href="{% url 'login' %}">SIGN IN</a></div>
+                   <div class="col-md-3"><a href="{% url 'register' %}">SIGN UP</a></div>
+                   <div class="col-md-3"></div></div>
+                   </div>
+                   {% endif %}
+                   <div class="row md main_text">
+                   <div class="col-md-3"></div>
+                   <div class="col-md-6"><h1 class="main_text" id="title">DJANGO FRAMEWORK</h1></div>
+                   <div class="col-md-3"></div></div>
+                   <div class="row md main_text">
+                   <div class="col-md-3"></div>
+           <div class="col-md-3"><h1 class="main_text" id="made">Made by</h1></div>
+                   <div class="col-md-3">        <span id="username">me</span> &amp;
+        <span id="dlab">DLAB</span></div>
+                   <div class="col-md-3"></div></div>
+                   <div class="row md main_text">
+                   <div class="col-md-3 main_text"><a href="{% url 'admin:index' %}">ADMIN</a></div>
+                   <div class="col-md-3 main_text"><a href="{% url 'bookmark_index'%}">BOOKMARK</a></div>
+                   <div class="col-md-3 main_text"><a href="{% url 'blog_index'%}">BLOG</a></div>
+                   <div class="col-md-3"><a href="{% url 'django_des' %}">DJANGO</a></div>
+
+
+       </div>
+
+
+
+
+    </div>
+
+
+
+  </body>
 </html>

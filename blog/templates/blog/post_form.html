@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Add/Update</title>
+    <style>
+                button {
+            background-color:rgba(0,191,255 ,0.5 );
+            color:black;
+            width: 250px;
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 15px;
+        }
+        button:hover {
+            background-color: rgba(0,191,255 ,1 );
+            transition: 2s;
+        }
+                        button {
+            background-color:rgba(0,191,255 ,0.5 );
+            color:black;
+            width: 250px;
+            height: 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 15px;
+        }
+        button:hover {
+            background-color: rgba(0,191,255 ,1 );
+            transition: 2s;
+        }
+        #center {
+            margin-left:auto;
+            margin-right:auto;
+            text-align: center;
+        }
+        div {
+            font-size: 25px;
+            color: rgba(12, 34, 123, 0.5);
+        }
+        div:hover {
+            color: rgba(12, 34, 123, 1);
+        }
+        #hidden {
+            color:rgba(56, 6, 127, 0);
+        }
+        #hidden:hover {
+            color:rgba(56, 6, 127, 1);
+            transition:2s;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+    <div id="center">
+    <div>
+        {{ form.title.label_tag }}
+        {{ form.title }}
+    </div>
+    <div>
+        {{ form.image.label_tag }}
+        {{form.image}}
+    </div>
+    <div>
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+        <div id="hidden">
+            <button type="submit"> CREATE/UPDATE </button>
+            <br>to submit, click this button
+        </div>
+    </div>
+</form>
+</body>
+</html>

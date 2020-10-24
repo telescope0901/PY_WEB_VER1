@@ -1,55 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SIGN UP</title>
-    <style>
-    form {
-                    border: 2px solid black;
-            width: 500px;
-            height: 450px;
-            margin-top: 100px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: rgba(255,250,240 ,0.3 );
-        text-align: center;
-        padding-bottom: 50px;
-        padding-top: 50px;
+{% extends 'base.html' %}
 
-    }
-    form:hover {
-    transition: 2s;
-    background-color: rgba(255,250,240 ,1 );
+{% load staticfiles %}
 
-    }
-    div{
-        margin: 40px 15px;
-    }
-    body {
-        background-color: peru;
-    }
-    img {
-        width: 100px;
-        height: 100px;
+{% block content %}
 
-    }
-    </style>
-</head>
-<body>
-
-    <form method="post" action="."> {% csrf_token %}
-        <img src="https://drive.google.com/uc?id=1tI_eomPqtpH-_S7Xvk9spvd6hBj_3si7" alt="user">
-        <div>
-            {{ form.username.lable_tag }} {{ form.username }}
+<div class="container-fluid">
+    <div class="row md">
+        <div class="col-md-4">
         </div>
-        <div>
-            {{ form.password1.lable_tag }} {{ form.password1 }}
+        <div class="col-md-4">
+
+            <form method="post" action=".", id="block-content"> {% csrf_token %}
+
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="img">
+  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg>
+
+            <div class="row md">
+                <div class="col-md-6">USERNAME
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-file-person-fill" fill="rgba(10, 128, 146, 1)" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z"/>
+</svg>
+                </div>
+                <div class="col-md-6"> {{ form.username }} </div>
+            </div>
+            <div class="row md">
+                <div class="col-md-6">PASSWORD1 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="rgba(10, 128, 146, 1)" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg></div>
+                <div class="col-md-6">{{ form.password1 }}</div>
+            </div>
+            <div class="row md">
+                <div class="col-md-6">PASSWORD2 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-key-fill" fill="rgba(128, 146, 10, 1)" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+</svg></div>
+                <div class="col-md-6">{{ form.password2 }}</div>
+            </div>
+
+                <button type="submit" id="button" onclick="myFunction()"> SIGN UP </button>
+                <script>
+function myFunction() {
+  document.getElementById("button").style.boxShadow = "1px 2px";
+}
+</script>
+            </form>
         </div>
-        <div>
-            {{ form.password2.lable_tag }} {{ form.password2 }}
+        <div class="col-md-4">
         </div>
 
-        <button type="submit"> SIGN UP </button>
-    </form>
-</body>
-</html>
+    </div>
+</div>
+
+{% endblock content %}
