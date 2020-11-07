@@ -1,65 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>DJANGO BOOKMARK INDEX PAGE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
-    <style>
+{% extends 'base.html' %}
 
-        span {
-            font-size: 64px;
-            color: brown;
-        }
-        * {
-            font-family: 'Nanum Myeongjo', serif;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-            margin-bottom: 10px;
-        }
-        a:hover {
-            background-color: aqua;
-            color: fuchsia;
-            text-decoration: none;
-            list-style: none;
-        }
-        li {
-            text-decoration: none;
-            list-style: none;
-            margin-bottom: 15px;
+{% load staticfiles %}
 
-        }
-        a:hover {
-            color: fuchsia;
+{% block content %}
 
-        }
-        button {
-            text-align: center;
-            width: 100px;
-            height: 60px;
-            font-size: 20px;
-            border: none;
-            border-radius: 15px;
-            background-color: rgba(123, 104, 238, 0.5);
-        }
-        button:hover {
-            transition: 1s;
-            background-color: rgba(123, 104, 238, 1);
-            color: white;
-        }
-
-    </style>
-</head>
-<body>
-<div id="content">
+<div class="container-fluid">
+    <div class="row md">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"><div id="content-bookmark-list">
     <h1> <span>에</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤<span>헤</span>헤 </h1>
-    <ul>
 
+    <ul>
+        {% if user.is_active  %}
         <a href=" {% url 'bookmark_create' %} ">
         <button>CREATE</button>
         </a>
-
+        {% endif %}
         {% for bookmark in object_list  %}
 
         <li> <a href= "{%  url 'detail' bookmark.id  %}" > {{ bookmark  }}  </a> </li>
@@ -67,6 +23,12 @@
         {% endfor %}
 
     </ul>
+</div></div>
+        <div class="col-md-3"></div>
+    </div>
 </div>
-</body>
-</html>
+
+
+
+
+{% endblock content %}

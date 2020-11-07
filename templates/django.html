@@ -1,47 +1,16 @@
-<!doctype html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <title>about django</title>
-    <style>
-        img {
-            margin-left: auto;
-            margin-right: auto;
-            text-align:center;
-            display: block;
-        }
-        #logo {
-            display: block;
-            width: 500px;
-            height: 200px;
-        }
-        div {
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-        div div div{
-            padding: 0px 0px;
-        }
-        h2 {
-            font-size: 30px;
-            color: orangered;
-        }
-        h3 {
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 25px;
-            color: forestgreen;
-            text-align:center;
-        }
-        h4 {
-            color: darkturquoise;
-        }
-    </style>
-</head>
 
-<body>
-    <div id="content">
+
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row md">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+                <div id="content-django">
         <br>
         <div>
             <img src="https://www.djangoproject.com/m/img/logos/django-logo-positive.png" id="logo">
@@ -108,4 +77,10 @@
             </p>
         </div>
     </div>
-</body></html>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+{% endblock content %}

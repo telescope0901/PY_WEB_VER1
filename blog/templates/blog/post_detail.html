@@ -1,92 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-        <script>
+{% extends 'base.html' %}
 
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://telescope09011.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-        <style>
-        h1 {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 40px;
-        }
-        #small {
-            font-size: 20px;
-        }
-        #content {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid black;
-        }
-        .des {
-            color: firebrick;
-        }
-        .post {
-            display: inline-block;
-            border: 1px solid black;
-            text-align: center;
-            width: 410px;
-            height: 650px;
-        }
-                span {
-            font-size: 64px;
-            color: brown;
-        }
-        * {
-            font-family: 'Nanum Myeongjo', serif;
-        }
-        a {
-            text-decoration: none;
-            color: black;
-            margin-bottom: 10px;
-        }
-        a:hover {
-            background-color: aqua;
-            color: fuchsia;
-            text-decoration: none;
-            list-style: none;
-        }
-        li {
-            text-decoration: none;
-            list-style: none;
-            margin-bottom: 15px;
+{% load staticfiles %}
 
-        }
-        a:hover {
-            color: fuchsia;
+{% block content %}
 
-        }
-        button {
-            background-color:rgba(0,191,255 ,0.5 );
-            color:black;
-            width: 100px;
-            height: 60px;
-            font-size: 20px;
-            border: none;
-            border-radius: 15px;
-        }
-        button:hover {
-            background-color: rgba(0,191,255 ,1 );
-            transition: 2s;
-        }
-        p {
-            font-size:30px;
-        }
-
-    </style>
-</head>
-<body>
-<div id="content">
+<div class="container-fluid">
+    <div class="row md">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div id="content-post-detail">
         <a href="{% url 'blog_update' post.id %}">
         <button> UPDATE </button>
 
@@ -105,5 +27,24 @@
         <div id="disqus_thread"></div>
 
 </div>
-</body>
-</html>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+
+
+        <script>
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://telescope09011.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+
+
+{% endblock content %}
